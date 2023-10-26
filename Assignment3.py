@@ -16,13 +16,13 @@ def main():
     print("7.EXIT")
     print()
 
-    menuNb = int(input("Enter your choice please :"))
+    menu_Nb = int(input("Enter your choice please :"))
 
-    if menuNb == 1:
+    if menu_Nb == 1:
         addMatrices()
 
 def addMatrices():
-    k,i,j,x,y = 0,0,0,0,0
+    i,j = 0,0
     m1 = []
     m2 = []
     rows = int(input("Enter number of rows :"))
@@ -30,15 +30,22 @@ def addMatrices():
     for i in range(rows):
         a = []
         for j in range(cols):
-            a.append(eval(input("Enter elements of the row of matrix1:")))
+            a.append(eval(input("Enter one element of the row of matrix1:")))
         m1.append(a)
     for i in range(rows):
         b = []
         for j in range(cols):
-            b.append(eval(input("Enter elements of the row of matrix2:")))
+            b.append(eval(input("Enter one element of the row of matrix2:")))
         m2.append(b)
-
-    print(m1, "+", m2, "=")
+    print()
+    print(m1, "+", m2, "= ", end="")
+    m3 = []
+    for i in range(rows):
+        c = []
+        for j in range(cols):
+            c.append(m1[i][j] + m2[i][j])
+        m3.append(c)
+    print(m3)
 
 
 main()
