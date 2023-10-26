@@ -22,6 +22,8 @@ def main():
         addMatrices()
     elif menu_Nb == 2:
         print(checkRotation())
+    elif menu_Nb == 3:
+        print(invertDictionary())
 
 def addMatrices():
     i,j = 0,0
@@ -87,6 +89,22 @@ def checkRotation():
         return "MATRIX X IS A ROTATION OF MATRIX Y!"
     else:
         return "MATRIX X IS NOT A ROTATION OF MATRIX Y!"
+
+
+def invertDictionary():
+    key = int(input("Enter a key or -1 to stop: "))
+    d = {}
+    list1 = []
+    while key != -1:
+        for j in range(len(list1)):
+            if key == list1[j]:
+                print("this key exists")
+                return invertDictionary()
+        dic = input("Enter values to fill the dictionary: ")
+        d[key] = dic
+        key = int(input("Enter a key or -1 to stop: "))
+        list1.append(key)
+    return d
 
 
 main()
