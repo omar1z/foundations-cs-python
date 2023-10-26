@@ -20,6 +20,8 @@ def main():
 
     if menu_Nb == 1:
         addMatrices()
+    elif menu_Nb == 2:
+        checkRotation()
 
 def addMatrices():
     i,j = 0,0
@@ -46,6 +48,10 @@ def addMatrices():
             c.append(m1[i][j] + m2[i][j])
         m3.append(c)
     print(m3)
+
+
+def checkRotation():
+    
 
 
 main()
