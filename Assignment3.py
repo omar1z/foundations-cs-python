@@ -128,12 +128,16 @@ def invertDictionary():
 def matrixToDic():
     rows = int(input("Enter how many user you want to enter their data :"))
     m = []
+    id_list = []
     for i in range(rows):
         a = []
-        print("for user", i)
+        print("for user", i+1)
         f_name = input("Enter first name for user :")
         l_name = input("Enter last name for user :")
         idd = int(input("Enter ID for user :"))
+        while idd in id_list:
+            idd = int(input("***Enter a different ID for user*** :"))
+        id_list.append(idd)
         job_t = input("Enter job title for user :")
         company = input("Enter the company of the user :")
         a.append(f_name)
@@ -145,7 +149,18 @@ def matrixToDic():
     print()
     print("Input :")
     print(m)
-    
+    dictionary = {}
+    f = ""
+    for i in range(rows):
+        user_details = []
+        for j in range(5):
+            if j != 2:
+                user_details.append([m[i][j]])
+            else:
+                f = m[i][2]
+        dictionary[f] = user_details
+
+    return dictionary
 
 
 main()
