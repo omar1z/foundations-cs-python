@@ -189,7 +189,14 @@ def searchAm(lst, element):
         if element == lst[i]:
             print(element, "was found in index :", i)
     print("list before sorting :",lst)
-    
+    print("The list sorted :")
+    for i in range(len(lst)):
+        mini = i
+        for j in range(i+1, len(lst)):
+            if lst[j] < lst[mini]:
+                mini = j
+        lst[i], lst[mini] = lst[mini], lst[i]
+    return lst
 
 
 
