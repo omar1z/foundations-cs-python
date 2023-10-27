@@ -1,10 +1,9 @@
 #ASSIGNMENT3
+# user's name
+print("HELLO MY FRIEND :)")
+username = input("Please enter your name :")
+print("Welcome dear _", username, "_")
 def main():
-    # user's name
-    print("HELLO MY FRIEND :)")
-    username = input("Please enter your name :")
-    print("Welcome dear _", username, "_")
-
     #MENU
     print()
     print("1.Add Matrices")
@@ -16,24 +15,26 @@ def main():
     print("7.EXIT")
     print()
 
-    menu_Nb = int(input("Enter your choice please :"))
+    menu_nb = int(input("Enter your choice please :"))
+    while menu_nb > 7:
+        menu_nb = int(input("Enter a valid choice please :"))
 
-    if menu_Nb == 1:
+    if menu_nb == 1:
         addMatrices()
-    elif menu_Nb == 2:
+    elif menu_nb == 2:
         print(checkRotation())
-    elif menu_Nb == 3:
+    elif menu_nb == 3:
         print(invertDictionary())
-    elif menu_Nb == 4:
+    elif menu_nb == 4:
         print(matrixToDic())
-    elif menu_Nb == 5:
+    elif menu_nb == 5:
         s = input("Enter a string to check it if it's palindrome :")
         print(checkPalindrome(s, 0, -1))
-    elif menu_Nb == 6:
+    elif menu_nb == 6:
         element_list = [3,6,1,9,4,0,2,7,2]
         elem = int(input("Check if the number you are thinking about is in this list :) :"))
         print(searchAm(element_list, elem))
-    else:
+    elif menu_nb == 7:
         exit()
 
 def addMatrices():
@@ -197,8 +198,8 @@ def searchAm(lst, element):
     return lst
 
 
-
-main()
+while True:
+    main()
 
 
 
