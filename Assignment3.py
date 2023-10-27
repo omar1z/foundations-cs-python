@@ -26,6 +26,9 @@ def main():
         print(invertDictionary())
     elif menu_Nb == 4:
         print(matrixToDic())
+    elif menu_Nb == 5:
+        s = input("Enter a string to check it if it's palindrome :")
+        print(checkPalindrome(s, 0, -1))
     else:
         exit()
 
@@ -161,6 +164,21 @@ def matrixToDic():
         dictionary[f] = user_details
 
     return dictionary
+
+
+def checkPalindrome(s, c, e):
+    mid = len(s)//2
+    if s == "":
+        print("You didn't enter a string")
+    else:
+        if s[c] == s[e] and c != mid:
+            return checkPalindrome(s,c+1,e-1)
+        elif c == mid:
+            return "This string is a palindrome"
+        else:
+            return "This string is not palindrome"
+
+
 
 
 main()
