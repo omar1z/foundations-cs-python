@@ -29,6 +29,10 @@ def main():
     elif menu_Nb == 5:
         s = input("Enter a string to check it if it's palindrome :")
         print(checkPalindrome(s, 0, -1))
+    elif menu_Nb == 6:
+        element_list = [3,6,1,9,4,0,2,7,2]
+        elem = int(input("Check if the number you are thinking about is in this list :) :"))
+        print(searchAm(element_list, elem))
     else:
         exit()
 
@@ -178,6 +182,14 @@ def checkPalindrome(s, c, e):
         else:
             return "This string is not palindrome"
 
+
+def searchAm(lst, element):
+    j = 0
+    for i in range(len(lst)):
+        if element == lst[i]:
+            print(element, "was found in index :", i)
+    print("list before sorting :",lst)
+    
 
 
 
