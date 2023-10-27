@@ -24,6 +24,8 @@ def main():
         print(checkRotation())
     elif menu_Nb == 3:
         print(invertDictionary())
+    elif menu_Nb == 4:
+        print(matrixToDic())
     else:
         exit()
 
@@ -121,6 +123,29 @@ def invertDictionary():
             inverted_dict[value] = key
 
     return inverted_dict
+
+
+def matrixToDic():
+    rows = int(input("Enter how many user you want to enter their data :"))
+    m = []
+    for i in range(rows):
+        a = []
+        print("for user", i)
+        f_name = input("Enter first name for user :")
+        l_name = input("Enter last name for user :")
+        idd = int(input("Enter ID for user :"))
+        job_t = input("Enter job title for user :")
+        company = input("Enter the company of the user :")
+        a.append(f_name)
+        a.append(l_name)
+        a.append(idd)
+        a.append(job_t)
+        a.append(company)
+        m.append(a)
+    print()
+    print("Input :")
+    print(m)
+    
 
 
 main()
