@@ -3,6 +3,8 @@
 print("HELLO MY FRIEND :)")
 username = input("Please enter your name :")
 print("Welcome dear _", username, "_")
+
+
 def main():
     #MENU
     print()
@@ -165,11 +167,15 @@ def matrixToDic():
             else:
                 f = m[i][2]
         dictionary[f] = user_details
-
+    print("Output :")
     return dictionary
 
 
 def checkPalindrome(s, c, e):
+    # s is the string
+    # c is the starting point that is at index 0
+    # e is -1 the last index
+    # incrementing c and decrementing e
     mid = len(s)//2
     if s == "":
         print("You didn't enter a string")
