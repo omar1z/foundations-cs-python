@@ -104,16 +104,14 @@ def checkRotation():
 
 
 def invertDictionary():
-    list1 = ['k']
+    list1 = []
     d_key = int(input("Enter a key or -1 to stop: "))
     d = {}
 
     while d_key != -1:
-        for i in range(len(list1)):
-            if d_key == list1[i]:
-                print("this key exists")
-                d_key = int(input("Enter a different key or -1 to stop: "))
-
+        while d_key in list1:
+            print("***Key already exists***")
+            d_key = int(input("Enter a key or -1 to stop: "))
         dic_value = input("Enter values to fill the dictionary: ")
         list1.append(d_key)
         d[d_key] = dic_value
