@@ -1,7 +1,5 @@
 # FSW (Simulating Student API Endpoints)
-
-def main():
-    student_data = [
+student_data = [
         {
             "ID": 1,
             "Name": "Alice",
@@ -17,6 +15,8 @@ def main():
             "GPA": 3.9
         }
     ]
+def main():
+
 
     print("1. Get Student by ID")
     print("2. Get All Students")
@@ -41,6 +41,13 @@ def main():
     elif choice == 3:
         gbm = input("Enter a major to get all students of it :")
         print(getByMaj(student_data,gbm))
+    elif choice == 4:
+        name = input("Enter student name :")
+        age = input("Enter student age :")
+        major = input("Enter student major :")
+        gpa = input("Enter student gpa :")
+        student_data.append(addSt(student_data, name, age, major, gpa))
+        
 
 def getById(st_data, st_id):
     for i in st_data:
@@ -60,6 +67,10 @@ def getByMaj(st_data, st_maj):
             print(i["Name"])
     return ":)"
 
+
+def addSt(st_data, name, age, major, gpa):
+    dictionary = {"ID": len(st_data)+1, "name": name, "age": age, "major": major, "GPA": gpa}
+    return dictionary
 
 while True:
     main()
