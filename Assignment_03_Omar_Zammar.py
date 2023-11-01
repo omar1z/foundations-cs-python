@@ -72,6 +72,9 @@ def main():
         addSt(student_data, name, age, major, gpa)
     elif choice == 5:
         print(findCommon(student_data, student_data1))
+    elif choice == 6:
+        idd = eval(input("Enter the id of the student that you want to delete :"))
+        print(delSt(student_data, idd))
     else:
         exit()
 
@@ -109,6 +112,15 @@ def findCommon(st1, st2):
             if k == j["Major"]:
                 d2.append(j["Major"])
     return d2
+
+
+def delSt(st_dt, idd):
+    for i in st_dt:
+        if i["ID"] == idd:
+            st_dt.remove(i)
+    return st_dt
+
+
 
 
 while True:
