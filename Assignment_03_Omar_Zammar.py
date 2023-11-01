@@ -13,6 +13,27 @@ student_data = [
             "Age": 21,
             "Major": "Business",
             "GPA": 3.9
+        },
+        {
+            "ID": 1,
+            "Name": "Anas",
+            "Age": 30,
+            "Major": "Bio Science",
+            "GPA": 2.7
+        },
+        {
+            "ID": 2,
+            "Name": "Omar",
+            "Age": 22,
+            "Major": "Business",
+            "GPA": 4
+        },
+        {
+            "ID": 3,
+            "Name": "jad",
+            "Age": 18,
+            "Major": "Computer Science",
+            "GPA": 2
         }
     ]
 student_data1 = [
@@ -76,6 +97,9 @@ def main():
         print(delSt(student_data, idd))
     elif choice == 7:
         print(stAverage(student_data))
+    elif choice == 8:
+        nb_ot = int(input("Enter the number of top first :"))
+        print(gtp(student_data,nb_ot))
     else:
         exit()
 
@@ -133,6 +157,22 @@ def stAverage(st_data):
         s += j
     return "the average is:", s/c
 
+
+def gtp(st_data, nb_ot):
+    d = []
+    n = []
+    tup = ()
+    for i in st_data:
+        d.append(i["GPA"])
+    d.sort()
+    d.reverse()
+
+    for j in range(nb_ot):
+        for i in st_data:
+            if d[j] == i["GPA"]:
+                n.append(i["Name"])
+    tup = tuple(n)
+    return tup
 
 
 
