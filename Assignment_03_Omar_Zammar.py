@@ -11,8 +11,31 @@ student_data = [
             "ID": 2,
             "Name": "Bob",
             "Age": 21,
-            "Major": "Engineering",
+            "Major": "Business",
             "GPA": 3.9
+        }
+    ]
+student_data1 = [
+        {
+            "ID": 1,
+            "Name": "Anas",
+            "Age": 30,
+            "Major": "Bio Science",
+            "GPA": 2.7
+        },
+        {
+            "ID": 2,
+            "Name": "Omar",
+            "Age": 22,
+            "Major": "Business",
+            "GPA": 4
+        },
+        {
+            "ID": 3,
+            "Name": "jad",
+            "Age": 18,
+            "Major": "Computer Science",
+            "GPA": 2
         }
     ]
 def main():
@@ -46,8 +69,11 @@ def main():
         age = input("Enter student age :")
         major = input("Enter student major :")
         gpa = input("Enter student gpa :")
-        student_data.append(addSt(student_data, name, age, major, gpa))
-        
+        addSt(student_data, name, age, major, gpa)
+    elif choice == 5:
+        print(findCommon(student_data, student_data1))
+    else:
+        exit()
 
 def getById(st_data, st_id):
     for i in st_data:
@@ -69,8 +95,21 @@ def getByMaj(st_data, st_maj):
 
 
 def addSt(st_data, name, age, major, gpa):
-    dictionary = {"ID": len(st_data)+1, "name": name, "age": age, "major": major, "GPA": gpa}
-    return dictionary
+    dictionary = {"ID": len(st_data)+1, "name": name, "age": age, "Major": major, "GPA": gpa}
+    return st_data.append(dictionary)
+
+
+def findCommon(st1, st2):
+    d1 = []
+    d2 = []
+    for i in st1:
+        d1.append(i["Major"])
+    for j in st2:
+        for k in d1:
+            if k == j["Major"]:
+                d2.append(j["Major"])
+    return d2
+
 
 while True:
     main()
