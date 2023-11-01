@@ -38,9 +38,8 @@ student_data1 = [
             "GPA": 2
         }
     ]
+
 def main():
-
-
     print("1. Get Student by ID")
     print("2. Get All Students")
     print("3. Get Students by Major")
@@ -75,6 +74,8 @@ def main():
     elif choice == 6:
         idd = eval(input("Enter the id of the student that you want to delete :"))
         print(delSt(student_data, idd))
+    elif choice == 7:
+        print(stAverage(student_data))
     else:
         exit()
 
@@ -119,6 +120,18 @@ def delSt(st_dt, idd):
         if i["ID"] == idd:
             st_dt.remove(i)
     return st_dt
+
+
+def stAverage(st_data):
+    av = []
+    s = 0
+    c = 0
+    for i in st_data:
+        av.append(i["GPA"])
+        c += 1
+    for j in av:
+        s += j
+    return "the average is:", s/c
 
 
 
