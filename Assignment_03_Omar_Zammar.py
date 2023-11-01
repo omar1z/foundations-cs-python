@@ -1,6 +1,23 @@
 # FSW (Simulating Student API Endpoints)
 
 def main():
+    student_data = [
+        {
+            "ID": 1,
+            "Name": "Alice",
+            "Age": 20,
+            "Major": "Computer Science",
+            "GPA": 3.7
+        },
+        {
+            "ID": 2,
+            "Name": "Bob",
+            "Age": 21,
+            "Major": "Engineering",
+            "GPA": 3.9
+        }
+    ]
+
     print("1. Get Student by ID")
     print("2. Get All Students")
     print("3. Get Students by Major")
@@ -11,5 +28,38 @@ def main():
     print("8. Get Top Performers")
     print("9. EXIT")
 
+    print()
+    choice = int(input("Enter your choice please : "))
+    while choice > 9:
+        choice = int(input("Enter a valid choice please :"))
 
-main()
+    if choice == 1:
+        gbi = eval(input("Enter student ID to get all his Info :"))
+        print(getById(student_data,gbi))
+    elif choice == 2:
+        print(getAstud(student_data))
+    elif choice == 3:
+        gbm = input("Enter a major to get all students of it :")
+        print(getByMaj(student_data,gbm))
+
+def getById(st_data, st_id):
+    for i in st_data:
+        if i["ID"] == st_id:
+            return i
+
+
+def getAstud(st_data):
+    for i in st_data:
+        print(i)
+    return ":)"
+
+
+def getByMaj(st_data, st_maj):
+    for i in st_data:
+        if i["Major"] == st_maj:
+            print(i["Name"])
+    return ":)"
+
+
+while True:
+    main()
