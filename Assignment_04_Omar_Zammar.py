@@ -89,23 +89,41 @@ class PriorityQueue:
             self.size -= 1
 
 
-def main():
-    pq = PriorityQueue()
+class Stack:
 
-    pq.enqueue("task1", 3)
-    pq.enqueue("task2", 7)
-    pq.enqueue("task3", 1)
-    pq.enqueue("task4", 2)
-    pq.enqueue("task5", 5)
-    pq.enqueue("task6", 4)
+    def __init__(self):
+        self.header = None
+        self.size = 0
 
-    pq.displayQueue()
+    def isEmpty(self):
+        return self.header is None
 
-    pq.dequeue()
-    pq.dequeue()
-    pq.dequeue()
+    def displayStack(self):
 
-    pq.displayQueue()
+        current = self.header
+
+        while current is not None:
+            print("|" + str(current.description) + "|")
+            current = current.next
+
+        print("---")
+
+    def push(self, description, priority):
+        node_to_add = Task(description, priority)
+
+        node_to_add.next = self.header
+        self.header = node_to_add
+        self.size += 1
+
+    def pop(self):
+
+        if self.isEmpty():
+            print("Cannot pop from an empty stack")
+        else:
+            temp = self.header
+            self.header = self.header.next
+            temp.next = None
+            self.size -= 1
+            return temp.description
 
 
-main()
