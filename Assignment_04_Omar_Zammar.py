@@ -127,3 +127,25 @@ class Stack:
             return temp.description
 
 
+class TaskManager:
+    def __init__(self):
+        self.tasks = []
+
+
+
+def main():
+    print("1. Adding a new task to the task manager.")
+    print("2. Getting a task from the queue given a task id")
+    print("3. Marking the highest priority task as completed and putting it in the task history.")
+    print("4. Displaying all tasks in order of priority.")
+    print("5. Displaying only the tasks that are not completed.")
+    print("6. Displaying the last completed task.")
+    print("7. EXIT")
+
+    user_input = int(input("Enter your choice : "))
+    if user_input == 7:
+        exit()
+
+
+while True:
+    main()
