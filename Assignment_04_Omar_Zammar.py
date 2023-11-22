@@ -10,7 +10,17 @@ class Task:
         self.priority = priority
         self.completed = completed
 
-        
+    def getId(self):
+        return self.task_id
+
+    def getDescription(self):
+        return self.description
+
+    def getPriority(self):
+        return self.priority
+
+    def getStatus(self):
+        return self.completed
 
 
 
