@@ -103,6 +103,7 @@ def main():
     else:
         exit()
 
+
 def getById(st_data, st_id):
     for i in st_data:
         if i["ID"] == st_id:
